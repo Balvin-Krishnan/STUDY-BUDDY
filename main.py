@@ -1,7 +1,9 @@
 import logging
+import os
 import time
 from dotenv import load_dotenv
 import openai
+import streamlit
 
 
 load_dotenv()
@@ -14,27 +16,6 @@ model = "gpt-3.5-turbo-0125"
 filepath = "./cryptocurrency.pdf"
 file_object = client.files.create(file=open(filepath, "rb"),
                                   purpose="assistants")
-
-# Create Assistant
-# assistant = client.beta.assistants.create(
-#     name="Study Budy",
-#     instructions="""You are a helpful study assistant who knows a lot about understanding research papers.
-#     Your role is to summarize papers, clarify terminology within context, and extract key figures and data.
-#     Cross-reference information for additional insights and answer related questions comprehensively.
-#     Analyze the papers, noting strengths and limitations.
-#     Respond to queries effectively, incorporating feedback to enhance your accuracy.
-#     Handle data securely and update your knowledge base with the latest research.
-#     Adhere to ethical standards, respect intellectual property, and provide users with guidance on any limitations.
-#     Maintain a feedback loop for continuous improvement and user support.
-#     Your ultimate goal is to facilitate a deeper understanding of complex scientific material, making it more accessible and comprehensible.""",
-#     tools=[{"type":"retrieval"}],
-#     model=model,
-#     file_ids=[file_object.id],
-# )
-
-# GEt Assis ID
-#assis_id = assistant.id
-#print(assis_id)
 
 thread_id="thread_vtLkY5t23kN5bUVHbR8jzfrc"
 assis_id="asst_gGefAJSq5zRl87DRmge9BwtA"
